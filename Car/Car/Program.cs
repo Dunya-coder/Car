@@ -23,6 +23,18 @@ namespace Car
             int year = Convert.ToInt32(Console.ReadLine());
             k.year = year;
             k.CalculateDepreciation(year);
+            Console.WriteLine("\n 2.");
+            k.Price = 9800000000000;
+            k.Speed = 60;//3.1 second
+            k.Model = "Tesla Model S Long Range";
+            k.Year = 2003;
+
+            k.GetCarInfo();
+            Console.Write("this year:");
+            int year2 = Convert.ToInt32(Console.ReadLine());
+            k.year = year2;
+            k.CalculateDepreciation(year2);
+
         }
     }
     public class Car
@@ -108,6 +120,10 @@ namespace Car
                 persent = s * 10;
                 l = Price - (Price * persent / 100);
                 Console.WriteLine($"annual change,new Price:{l}");
+            }
+            if(year<(int)Year)
+            {
+                Console.WriteLine("This model Car didn't have!");
             }
             else
             {
